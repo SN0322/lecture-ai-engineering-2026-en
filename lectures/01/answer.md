@@ -10,17 +10,63 @@ For the general question "What is LoRA?" the answers were broadly correct, but t
 ## Homework
 
 - Level attempted:  Advanced
-- What you did: Added timing and token reporting (input, output, thinking, total) to Added timing and token reporting (input, output, thinking, total) to gemini-3.5-flash via AIE_MODEL, with a short pause between calls. Time is measured end to end (network + generation), not time to first token.
-- Results (means; flash n=2 per question because of failed calls):
-| Model | Question | Runs | Time (s) | Input | Output | Thinking | Total |
-|---|---|---|---|---|---|---|---|
-| flash-lite | LoRA | 3 | 4.2 | 6 | 726 | 0 | 732 |
-| flash-lite | Homework | 3 | 8.8 | 18 | 49 | 0 | 67 |
-| flash | LoRA | 2 | 24.3 | 6 | 849 | 1047 | 1902 |
-| flash | Homework | 2 | 15.6 | 18 | 398 | 1091 | 1507 |
-Failures: gemini-3.5-flash returned 503 (model busy) on retries of two runs; the other missing runs were not recorded because my first loop hid error messages. No 429 (rate limit) errors were observed.
+- What you did: 
+  - Implemented the TODO in `app/ask.py` using `response.usage_metadata`.
+  - Added token-count reporting (input, output, and total tokens).
+  - Added response-time measurement.
+  - Created a benchmark script (`benchmarks/bench.py`) to automate repeated experiments.
+  - Compared two models:
+    - `gemini-3.5-flash-lite`
+    - `gemini-3.8-flash`
+  - Compared two questions:
+    - "What is LoRA?"
+    - "What are the 3 homework levels in the AIE2026 course?"
+  - Collected multiple benchmark runs across several days and analyzed latency, token usage, hallucinations, and API errors.
+- Results:
+
+### Benchmark Summary
+
+| Model | Question | Successful Runs | Avg Time (s) | Avg Output Tokens | Avg Thinking Tokens |
+|---------|----------|---------:|---------:|---------:|---------:|
+| gemini-3.5-flash-lite | LoRA | 5 | 3.24 | 735 | 0 |
+| gemini-3.5-flash-lite | Homework levels | 5 | 1.08 | 133 | 0 |
+| gemini-3.8-flash | LoRA | 5 | 96.35 | 803 | 908 |
+| gemini-3.8-flash | Homework levels | 5 | 103.74 | 350 | 1533 |
+
+### Reliability
+
+| Model | Successes | Failures |
+|---------|---------:|---------:|
+| gemini-3.5-flash-lite | 10 | 0 |
+| gemini-3.8-flash | 10 | 6 |
+
+Observed errors for `gemini-3.8-flash`:
+- ReadTimeout
+- HTTP 503 (high demand)
+- HTTP 504 (deadline exceeded)
+
+### Ground Truth Comparison
+
+The correct homework levels from `data/glossary.json` are:
+
+1. Basic (review lecture content)
+2. Implementation (write your own code)
+3. Advanced (research and experimentation)
+
+For the course-specific question, neither model consistently produced the correct answer without access to the glossary.
+
+- Results from `gemini-3.5-flash-lite`:
+  - Usually replied that it did not know the answer.
+  - Occasionally generated plausible but incorrect homework levels.
+
+- Results from `gemini-3.8-flash`:
+  - Consistently generated detailed and plausible course structures.
+  - None matched the actual glossary definition.
+
 - Observations and questions:
-- flash used about 1,000-1,100 thinking tokens per call even for a short question, while flash-lite used none. Total tokens were roughly 22x higher for flash on the homework question, and latency was 2-7x higher.
-- Latency did not track output length: flash-lite took 6-11 s for ~50 tokens in the loop but 1.9 s for the same question in a later run, so timing is noisy (n=3).
-- Rate limits: [fill in from AI Studio: RPM / TPM / RPD for each model]. If thinking tokens count toward token quotas, flash would consume them much faster than flash-lite. The 503s are server-side overload, not my quota.
-- Question: do thinking tokens count toward the free-tier token limits?
+  - `gemini-3.5-flash-lite` was much faster and more reliable than `gemini-3.8-flash`.
+  - The stronger model used substantially more reasoning tokens, especially for the course-specific question.
+  - More reasoning did not improve correctness when the required information was missing.
+  - For unknown course information, `gemini-3.5-flash-lite` often admitted uncertainty, whereas `gemini-3.8-flash` tended to generate detailed but incorrect answers.
+  - Free-tier limitations are influenced not only by request count but also by model demand and response complexity. The stronger model showed timeout and service-availability issues during benchmarking.
+  - These results demonstrate why later lectures introduce tools and retrieval mechanisms instead of relying solely on a bare LLM.

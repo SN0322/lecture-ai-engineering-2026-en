@@ -34,10 +34,9 @@ def ask(question: str) -> str:
         print(
             f"[tokens] input={usage.prompt_token_count or 0} "
             f"output={usage.candidates_token_count or 0} "
-            f"thinking={usage.thoughts_token_count or 0} "
-            f"total={usage.total_token_count or 0} "
+            f"total={usage.total_token_count or 0}"
         )
-    print(f"[time] {elapsed:.2f}s")
+
     return response.text
 
 
