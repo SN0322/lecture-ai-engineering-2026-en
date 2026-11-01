@@ -1,0 +1,345 @@
+[
+  {
+    "group":"exact",
+    "question":"What is LoRA?",
+    "output":"A method that freezes pretrained weights, represents weight updates as the product of two small matrices (low-rank matrices), and trains only those small matrices. It trains few parameters and saves the results (adapters) in small files. LoRA fits well for multi-language models (MLMs) and LLMs in the AIE2026 course.",
+    "similarity":0.82,
+    "label":"match"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Can you tell me what LoRA means?",
+    "output":"A method that freezes pretrained weights, represents weight updates as the product of two small matrices (low-rank matrices), and trains only those small matrices. It trains few parameters and saves the results (adapters) in small files. The Lecture 03 exercises cover LoRA.",
+    "similarity":0.99,
+    "label":"match"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Explain LoRA in the context of this course.",
+    "output":"A method for freezing pretrained weights, then updating only a small subset (low-rank matrices) through gradient descent. It saves memory and computation, and achieves state-of-theaters on general-purpose LLMs.",
+    "similarity":0.46,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Give a brief definition of LoRA.",
+    "output":"A method for freezing pretrained weights, then updating only a small subset (low-rank matrices) through ADaE. This saves GPU memory and storage while still achieving significant improvement in performance.",
+    "similarity":0.43,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"What does the term LoRA refer to?",
+    "output":"A method for freezing pretrained weights, then training only a small subset (low-rank matrices) to further reduce training time and memory use. It is the foundation of LoRA-rank.",
+    "similarity":0.48,
+    "label":"mismatch"
+  },
+  {
+    "group":"exact",
+    "question":"What is Hallucination?",
+    "output":"The phenomenon of an LLM generating plausible content that is factually incorrect or nonexistent. It is more likely when asked about things the model does not know, such as recent information or organization- or course-specific details. Mitigations include asking for evidence, checking facts against tools or documents, and trusting human confirmation when appropriate.",
+    "similarity":0.82,
+    "label":"match"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Can you tell me what Hallucination means?",
+    "output":"The phenomenon of an LLM generating plausible content that is factually incorrect or nonexistent. It is more likely when asked about things the model does not know, such as recent information or organization- or course-specific details. Mitigations include asking for evidence, checking facts against tools or documents, and trusting human confirmation when possible.",
+    "similarity":0.82,
+    "label":"match"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Explain Hallucination in the context of this course.",
+    "output":"The phenomenon of an LLM generating plausible content that is factually incorrect or nonexistent. It is more likely when asked about things the model does not know, such as recent information or organization- or course-specific details. Mitigations include consulting external data through tools, asking for evidence, and detecting errors through evaluation.",
+    "similarity":1.0,
+    "label":"match"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Give a brief definition of Hallucination.",
+    "output":"The phenomenon of an LLM generating plausible content that does not exist. It is more likely when asked about things the model does not know, such as people, organizations, products, regulations, and data. Detect it by checking facts against external sources or through tools.",
+    "similarity":0.65,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"What does the term Hallucination refer to?",
+    "output":"The phenomenon of an LLM generating plausible content that is factually incorrect or nonexistent. It is more likely when asked about things the model does not know, such as recent information or organization- or course-specific details. Mitigations include asking for evidence, checking facts against external data through tools or research, and trusting human confirmation when appropriate.",
+    "similarity":0.85,
+    "label":"match"
+  },
+  {
+    "group":"exact",
+    "question":"What is Token?",
+    "output":"The smallest unit an LLM uses to process text. It includes letters, spaces, and punctuation, and can vary by language and rate limits. In this course, we use the standard Python stdlib sentence object, which splits text into words and handles punctuation automatically.",
+    "similarity":0.44,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Can you tell me what Token means?",
+    "output":"The smallest unit an LLM uses to process text. It costs money to purchase. Free models run entirely in the browser or on the device.",
+    "similarity":0.4,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Explain Token in the context of this course.",
+    "output":"The smallest unit an LLM uses to process text. Text is split into fragments of words or characters. The same text can be processed with different fragment sizes, affecting rate limits, memory usage, and output. In Pydantic AI, we use the LLM_CONFIG.LLM_TOKEN_COUNT setting to choose the token count.",
+    "similarity":0.48,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Give a brief definition of Token.",
+    "output":"The smallest unit an LLM uses to process text. It consists of a set of characters or words, and the amount of tokens used varies by language and style.",
+    "similarity":0.57,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"What does the term Token refer to?",
+    "output":"The smallest unit an LLM uses to process text. Text is split into fragments of words or characters; the model processes one at a time, reacting to the output of the previous step. This is one reason the same question can yield different answers.",
+    "similarity":0.52,
+    "label":"mismatch"
+  },
+  {
+    "group":"exact",
+    "question":"What is Context window?",
+    "output":"The maximum total number of input and output tokens an LLM can handle in one call. It limits the amount of context (previous messages and input) and current question (current message and input) can cover. Too many tokens will cause a \"token exhaustion\" error.",
+    "similarity":0.48,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Can you tell me what Context window means?",
+    "output":"The maximum total number of input and output tokens an LLM can handle in one call. It limits the amount of text the model can read, write, and remember. If you request more information than fit, the model may not understand your question or produce incorrect answers.",
+    "similarity":0.51,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Explain Context window in the context of this course.",
+    "output":"The maximum total number of input and output tokens an LLM can handle in one call. If you propose an answer that exceeds this limit, the server returns a \"token exhaustion\" error. This course uses a standard 32K token limit.",
+    "similarity":0.58,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Give a brief definition of Context window.",
+    "output":"The maximum total number of input and output tokens an LLM can handle in one call. The model can only process within this limit, and the number of available context (previous messages) and outputs depends on the tool and language.",
+    "similarity":0.63,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"What does the term Context window refer to?",
+    "output":"The maximum total number of input and output tokens an LLM can handle in one call. Fits the limit on memory used in one execution.",
+    "similarity":0.62,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What is 3 homework levels?",
+    "output":"A basic level for beginners (just read and understand the course material). Progress to intermediate (identifying ambiguities, choosing tools, and observing results). Finally, advance to advanced (designing experiments, analyzing data, and presenting results in a final report).",
+    "similarity":0.3,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Can you tell me what 3 homework levels means?",
+    "output":"A system for distinguishing difficulty levels. Easy has little or no work; difficult requires extensive research and discussion. Moderately difficult requires some research and discussion, then writes and submits an assignment. Hard requires all the above, including reading the course handbook and asking for help.",
+    "similarity":0.27,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Explain 3 homework levels in the context of this course.",
+    "output":"A course structure that increases difficulty over time. Early work is easier (easy level), as is asking questions that are straightforward. As you gain experience, you tackle harder problems (hard level) and encounter more difficult questions. At the end of each unit, choose a level suited to your progress.",
+    "similarity":0.3,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Give a brief definition of 3 homework levels.",
+    "output":"A basic level for students who have not yet completed previous homework. In this course, it is the first homework (hw01). A harder level for students who have completed the previous ones (hw02, hw03, etc.). Difficulty increases by one level for each progression from the basic level.",
+    "similarity":0.3,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What does the term 3 homework levels refer to?",
+    "output":"A course structure with three progressively harder questions or exercises. Difficulty increases as you advance, and each question has its own grading criteria.",
+    "similarity":0.36,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What is Structured output?",
+    "output":"Output formatted with clear labels (for example, \"Explanation\" or \"Conclusion\") to show the model's reasoning and final answer. In Pydantic AI, you can use tool arguments to make this more explicit.",
+    "similarity":0.3,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Can you tell me what Structured output means?",
+    "output":"Output that is explicitly formatted with labeled sentences or tables so the model can follow a specific structure (for example, listing tools in a programming language introduction, or giving a bulleted list of potential risks in an AI usage guide). LLMs can handle many formats, but structured output makes the desired structure clear.",
+    "similarity":0.27,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Explain Structured output in the context of this course.",
+    "output":"A format that specifies the exact structure of output, such as a list of sentences or tables. In this course, use the \"Output format\" section at the beginning of each assignment to tell the AI whether to list steps, explain terms, or compare options.",
+    "similarity":0.19,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Give a brief definition of Structured output.",
+    "output":"Output that has a clear format, such as JSON, with question-answer pairs or tables for each question in the context window. LLMs can parse it easily. In Pydantic AI, tools with type = str or Output = JSON fits this.",
+    "similarity":0.36,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What does the term Structured output refer to?",
+    "output":"Output that has a fixed format, such as JSON, with clear labels for each output (for example, \"reason\", \"answer\", and \"examples\"). Models must follow this format according to the instructions (prompt) given to them. In Pydantic AI, tools with description, parameters, and return type can serve as structured output.",
+    "similarity":0.32,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What is Learning rate?",
+    "output":"A value that determines the size of the gradient used for optimization in each step. A larger value fits more local minima; a smaller value avoids them. In this course, we start with a large learning rate and gradually reduce it (learning-rate scheduling) to avoid overfitting.",
+    "similarity":0.4,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Can you tell me what Learning rate means?",
+    "output":"A value used to multiply the gradient when updating weights. Affects how much each parameter changes in one step. Lower values make stability more likely, but increase generalization.",
+    "similarity":0.45,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Explain Learning rate in the context of this course.",
+    "output":"A hyperparameter that determines the size of the gradient step taken in each training iteration. A small value fits over many steps; a large value jumps too often and can cause overfitting. In Pydantic AI, it is set to 1e-4 by default.",
+    "similarity":0.44,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Give a brief definition of Learning rate.",
+    "output":"A value that determines the size of the step taken in optimizing a model's output during one training pass. A smaller value decreases overfitting, and a larger value increases convergence speed.",
+    "similarity":0.42,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What does the term Learning rate refer to?",
+    "output":"A setting that determines the size of the step taken when optimizing a model's parameters. A smaller learning rate is more stable, while a larger one can accelerate convergence.",
+    "similarity":0.32,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What is Guardrail?",
+    "output":"A mechanism that prevents overfitting by adding constraints or regularities to the training data (for example, using a small set of representative features or a loss function that penalizes large gradients). In this course, we use a small set of training examples and a cross-entropy loss.",
+    "similarity":0.32,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Can you tell me what Guardrail means?",
+    "output":"A mechanism for preventing overfitting. It detects situations in which the model fits training data too closely and adjusts outputs (for example, by adding random noise or using regularization).",
+    "similarity":0.28,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Explain Guardrail in the context of this course.",
+    "output":"A mechanism that prevents overfitting by adding regularization such as dropout, early stopping, or learning-rate scheduling. In this course, we use early stopping by checking validation loss and stopping training when it stops improving.",
+    "similarity":0.27,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Give a brief definition of Guardrail.",
+    "output":"A mechanism that restricts model behavior or prevents errors. Examples include temperature and top-p limits, prompt templates, and tool arguments. In this course, we use LoRA r = 1 (a guardrail) to freeze pretrained weights and restrict fine-tuning changes.",
+    "similarity":0.28,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What does the term Guardrail refer to?",
+    "output":"A mechanism that restricts model behavior. It can include tone, output format, and multiple choices. In Pydantic AI, tools with description, arguments, and return format serve as guardrails.",
+    "similarity":0.29,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What are the 3 homework levels?",
+    "output":"A progression from reading and understanding the material to analyzing it and applying it. The levels are:\n\n- Beginner: Read and understand the material.\n- Intermediate: Analyze the material and explain its purpose and features.\n- Advanced: Apply the material to a problem or project.",
+    "similarity":0.29,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What are the three levels of homework in this course?",
+    "output":"A course structure that classifies homework by difficulty. Easy homework is done with assistance (AI, tutor, or peer); medium difficulty is done independently; hard difficulty requires independent work. In this course, homework 02 is medium difficulty.",
+    "similarity":0.17,
+    "label":"mismatch"
+  },
+  {
+    "group":"absent",
+    "question":"What is RAG?",
+    "output":"A method that retrieves relevant information by searching the product documentation or a LLM's internal knowledge base and then passes the results to the LLM. In this course, we use RAG by searching the course materials in the Files\/Readme.md folder and then asking an LLM to summarize them.",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is Embedding?",
+    "output":"A representation of a token as a vector in a common embedding space. All models use the same embeddings. In this course, we use the base model's embeddings.",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is Vector database?",
+    "output":"A database that stores AI model inputs (embeddings) as vectors in feature space and retrieves similar documents or people using search (AGI). In this course, we use PeftModel vector store by adding a Gemini AI agent to Python\/peft\/mcp_server.py and configuring it as a MCP tool.",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is DSPy?",
+    "output":"A framework for building and evaluating pretrained model bases. It integrates closely with Pydantic AI (PAI) and handles many common tasks, including question answering, classification, and tool use, without human intervention. This course uses it for lecture 03.",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is LangGraph?",
+    "output":"A framework for building agents. It represents a loop: detect need, choose tool, call tool, check result, and repeat. In this course, we use it to turn questions into steps (for example, search → read → summarize → answer).",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is Agentic RAG?",
+    "output":"A framework that connects LLMs to tools by having the LLM decide whether to call a tool and what to pass to it (for example, question → GET \/api\/data\/my_article). In this course, we use it to ask for external data by deciding whether to call the MCP server and what to pass (for example, a search query).",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is ReAct?",
+    "output":"A framework for showing model output to the model, then using the model's answers to guide further questions. It turns \"predict\" into \"act\": predict output, then use output to act, then predict the results of the acts done so far.",
+    "similarity":null,
+    "label":"asserted?"
+  }
+]

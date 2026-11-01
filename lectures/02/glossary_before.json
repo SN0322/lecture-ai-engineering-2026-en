@@ -1,0 +1,345 @@
+[
+  {
+    "group":"exact",
+    "question":"What is LoRA?",
+    "output":"**LoRA** stands for **Low-Rank Adaptation**. It is a technique used in **Neural Networks** to fine-tune large pre-trained models (like Large Language Models, LLMs) with significantly less computational cost and training time.\n\nHere is a breakdown of how it works and why it is important:\n\n### 1. The Core Concept\nIn standard fine-tuning, you train a model from scratch on a small amount of data, which is computationally expensive. LoRA works by **downsampling** the model's parameters.\n\nInstead of training the entire model, LoRA trains a **small,",
+    "similarity":0.24,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Can you tell me what LoRA means?",
+    "output":"**LoRA** stands for **Low-Rank Adaptation**. It is a technique used in **Neural Networks** to fine-tune large pre-trained models (like Large Language Models, LLMs) without requiring the entire model to be retrained from scratch.\n\nHere is a breakdown of how it works and why it's popular:\n\n### 1. The Core Concept\nIn a standard training process, you train a model on a massive amount of data, which can take days or weeks. However, this is often too expensive for large models.\n\nLoRA works by creating a **small, lightweight version** of the",
+    "similarity":0.23,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Explain LoRA in the context of this course.",
+    "output":"In the context of this course, **LoRA (Low-Rank Adaptation)** is a technique used to fine-tune large language models (LLMs) without requiring the entire model to be retrained from scratch.\n\nHere is a breakdown of how it works, why it is important, and how it differs from standard fine-tuning:\n\n### 1. The Core Concept\nStandard fine-tuning involves training a model on a massive amount of data (e.g., 100B parameters) to learn new patterns. This is computationally expensive and often leads to overfitting.\n\nLoRA works by using a",
+    "similarity":0.26,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Give a brief definition of LoRA.",
+    "output":"**LoRA** stands for **Low-Rank Adaptation**. It is a technique used in **Large Language Models (LLMs)** to fine-tune them with minimal computational cost.\n\nInstead of training the entire model from scratch, LoRA allows you to modify only a small, low-dimensional subspace of the model's weights. This is achieved by using a **LoRA adapter** (a lightweight matrix) that is added to the original model's weights. The adapter is trained separately on a small dataset, and its parameters are then injected into the main model, effectively learning only a few specific aspects of the model's behavior without requiring",
+    "similarity":0.24,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"What does the term LoRA refer to?",
+    "output":"**LoRA** stands for **Low-Rank Adaptation**. It is a technique used in the world of **Large Language Models (LLMs)** to fine-tune them without requiring the entire model to be retrained from scratch.\n\nHere is a breakdown of how it works and why it is popular:\n\n### How It Works\nInstead of training a massive model from scratch, LoRA uses a **Low-Rank Update** strategy.\n1.  **The Setup**: You define a small, trainable matrix (the LoRA weight matrix) and a small, trainable matrix (the LoRA embedding matrix).\n2.",
+    "similarity":0.18,
+    "label":"mismatch"
+  },
+  {
+    "group":"exact",
+    "question":"What is Hallucination?",
+    "output":"**Hallucination** is a mental disorder characterized by the **false perception of one's own or others' reality**. It occurs when a person believes they are experiencing sensations, events, or thoughts that do not exist in reality.\n\nHere is a breakdown of the key aspects:\n\n*   **Definition**: It is the belief that one is experiencing things that are not there. Common examples include seeing a shadow, hearing voices, or feeling pain when there is none.\n*   **Distinction from Illusion**: While both hallucinations and illusions are false perceptions, they differ in context:\n    *   **Illusion**: A",
+    "similarity":0.25,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Can you tell me what Hallucination means?",
+    "output":"**Hallucination** is a term used in psychology, medicine, and science to describe a **false perception** or **false belief** that occurs in a person or animal.\n\nHere is a breakdown of how it works:\n\n*   **False Perception**: The individual believes they are experiencing something real (e.g., hearing voices, seeing things, or feeling pain) when they are not.\n*   **False Belief**: The individual holds a false idea about the world or their own reality.\n*   **Context Matters**: Hallucinations can occur in various settings, including:\n    *   **Psychological**:",
+    "similarity":0.23,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Explain Hallucination in the context of this course.",
+    "output":"In the context of this course, **hallucination** refers to the phenomenon where a student (or a model) generates content that is **not actually present in the course materials, textbooks, or the course syllabus**, yet the student or model believes it is true.\n\nThis concept is distinct from other types of errors, such as:\n*   **Confusion**: Mixing up two different topics (e.g., thinking \"Physics\" is \"Chemistry\").\n*   **Misinformation**: Providing false facts that are factually incorrect.\n*   **Hallucination**: Providing false information that the student *believes*",
+    "similarity":0.22,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Give a brief definition of Hallucination.",
+    "output":"A **hallucination** is a false perception or belief that a person or animal has, which is not based on any sensory input or evidence. Unlike a delusion, which is a fixed, irrational belief that is not based on evidence, a hallucination is a temporary or situational error in perception.",
+    "similarity":0.21,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"What does the term Hallucination refer to?",
+    "output":"**Hallucination** is a mental disorder characterized by the **false perception of one's own or others' existence**.\n\nIn simpler terms, it occurs when a person believes they are real when they are not, or when they believe they are not real when they are. This can manifest in various ways, such as:\n\n*   **Seeing things that aren't there**: For example, seeing a person's face, hearing voices, or feeling a physical sensation (like a headache or a lump in the throat) that is not present.\n*   **Feeling things that aren't there**: For example, feeling a strong urge",
+    "similarity":0.26,
+    "label":"mismatch"
+  },
+  {
+    "group":"exact",
+    "question":"What is Token?",
+    "output":"**Token** is a fundamental concept in computer science, cryptography, and blockchain technology. It is a digital representation of ownership or control over a specific resource, such as a piece of data, a currency, or a tokenized asset.\n\nHere is a breakdown of how tokens work and their primary uses:\n\n### 1. Core Definition\nA token is a small, non-fungible piece of digital currency or utility that represents a specific claim or right. Unlike a standard digital currency (like Bitcoin), which is fungible (anyone can buy any amount of Bitcoin), a token is often unique to a specific entity or project.",
+    "similarity":0.21,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Can you tell me what Token means?",
+    "output":"**Token** is a fundamental concept in computer science, cryptography, and blockchain technology. It refers to a unit of currency or a digital asset that represents a specific amount of value or a specific claim on a digital good.\n\nHere is a breakdown of how it works and its different contexts:\n\n### 1. Cryptography and Digital Signatures\nIn the realm of cryptography, a **token** is a digital representation of a specific value or identity.\n*   **Function**: It acts as a digital signature or a proof of ownership.\n*   **Example**: If you buy a ticket for a concert, the ticket itself is",
+    "similarity":0.28,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Explain Token in the context of this course.",
+    "output":"In the context of **Web3 (Web 3.0)** and blockchain technology, a **Token** is a digital asset that represents a specific utility, value, or claim on a blockchain. Unlike traditional fiat currency (like dollars or euros), tokens are not backed by physical goods; instead, they are **digital tokens** that exist on a decentralized ledger.\n\nHere is a breakdown of how tokens function, their types, and their primary uses in the ecosystem:\n\n### 1. The Core Concept: Utility over Value\nThe fundamental difference between a token and money is **utility**.\n*   **Money** is a commodity",
+    "similarity":0.17,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Give a brief definition of Token.",
+    "output":"A **token** is a small unit of currency or a digital asset that represents a specific amount of value. In finance, it is often used to track the value of a specific asset, such as a stock, bond, or commodity. In digital contexts, it can be a digital token representing a specific amount of cryptocurrency, such as Bitcoin or Ethereum.",
+    "similarity":0.24,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"What does the term Token refer to?",
+    "output":"The term **Token** refers to a specific unit of value or identity used in various systems, primarily within **cryptocurrency** and **blockchain technology**.\n\nIn the context of cryptocurrency, a token is a digital asset that represents a claim to a specific asset or a unit of value within a blockchain. It is often used to measure the value of a cryptocurrency or to facilitate transactions. For example:\n*   **Bitcoin** uses **tokens** (specifically **BTC**) to represent the value of the cryptocurrency.\n*   **Ethereum** uses **ETH** as its native token.\n*   **Stablecoins",
+    "similarity":0.26,
+    "label":"mismatch"
+  },
+  {
+    "group":"exact",
+    "question":"What is Context window?",
+    "output":"A **context window** is a fundamental concept in artificial intelligence, particularly in **Large Language Models (LLMs)**. It refers to the maximum number of tokens (words, characters, or symbols) that a model can process and remember during its training and inference phases.\n\nThink of it as the \"memory limit\" or \"buffer size\" of the model. Here is a breakdown of how it works:\n\n### 1. The Core Definition\nWhen a model processes text, it breaks the input into tokens. The context window determines how many of these tokens the model can keep in its internal memory at any given moment.\n*",
+    "similarity":0.27,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Can you tell me what Context window means?",
+    "output":"**Context window** refers to the amount of information stored in a computer's **memory** that the operating system uses to process tasks.\n\nThink of it as the \"memory bank\" of your computer. When you open a new window or tab, the operating system checks this memory to see if the information you need is already there. If it is, it uses that stored data immediately; if not, it searches through the entire memory to find it.\n\nHere is a breakdown of how it works:\n\n*   **The Limit**: The context window has a maximum size. If you try to store more information than this limit, the",
+    "similarity":0.14,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Explain Context window in the context of this course.",
+    "output":"In the context of modern AI training and model development, the **Context Window** is the critical parameter that defines the maximum amount of text, code, or data a model can process simultaneously. It acts as the \"memory\" or \"context\" of the model, determining how much information it can hold in its internal buffer before it must discard or truncate that data.\n\nHere is a detailed breakdown of how it works, why it matters, and how it is managed:\n\n### 1. The Core Concept: The Buffer\nImagine a computer program (like a neural network) as a stack of data. The **Context Window** is",
+    "similarity":0.19,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"Give a brief definition of Context window.",
+    "output":"A **context window** is the maximum number of tokens (words, sentences, or characters) that a language model can process simultaneously. It acts as the \"memory\" of the model, allowing it to maintain a conversation history and understand the current user input in real-time.\n\nFor example, if a chatbot has a context window of 1,000 tokens, it can remember the last 1,000 words of conversation and answer questions about them without needing to re-read the entire chat history.",
+    "similarity":0.32,
+    "label":"mismatch"
+  },
+  {
+    "group":"paraphrase",
+    "question":"What does the term Context window refer to?",
+    "output":"In the context of Artificial Intelligence, **Context Window** refers to the **maximum number of tokens (words, sentences, or characters) that a language model can process simultaneously**.\n\nThink of it as the \"memory\" or \"scope\" of the model. Just as a human might remember a conversation from the previous few turns, a language model maintains a context window to understand the relationship between the current input and the previous inputs.\n\nHere are the key aspects of how it works:\n\n*   **Tokenization**: The input text is broken down into individual tokens (words, numbers, punctuation, etc.). The context window determines how many",
+    "similarity":0.21,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What is 3 homework levels?",
+    "output":"It seems like you are asking about a specific **homework assignment** or **project** that has three distinct levels, but the context is missing.\n\nCould you please provide more details about:\n1.  **The subject** (e.g., math, science, coding, history)?\n2.  **The specific project** or topic?\n3.  **The source material** (e.g., a textbook, a website, a course syllabus)?\n\nOnce you share that information, I can help you identify the three levels and guide you through the assignment.",
+    "similarity":0.15,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Can you tell me what 3 homework levels means?",
+    "output":"\"3 homework levels\" is a term used in **educational assessment** and **teaching methodology**, particularly within the context of **formative assessment** and **differentiated instruction**.\n\nIt refers to the idea that a single assignment or a single class session can be broken down into three distinct stages or tiers of difficulty, allowing teachers to tailor the learning experience to different students based on their current ability levels.\n\nHere is a breakdown of what each level typically means:\n\n### 1. The Foundation Level (Basic Skills)\n*   **Focus:** This level targets foundational concepts, vocabulary, and basic skills that every student must master",
+    "similarity":0.09,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Explain 3 homework levels in the context of this course.",
+    "output":"Since you haven't specified the exact course name or topic, I have created a **universal framework** for three distinct levels of homework. This structure is designed to be adaptable to almost any academic subject (e.g., Math, History, Programming, Literature).\n\nHere are the three levels of homework in the context of this course:\n\n### 1. The \"Foundational\" Homework\n*   **Focus:** Conceptual Understanding & Application\n*   **Goal:** To ensure students grasp the core definitions, theories, or basic principles before moving to more complex tasks.\n*   **Content:** This level typically involves basic exercises, short",
+    "similarity":0.17,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Give a brief definition of 3 homework levels.",
+    "output":"Here are brief definitions for three common homework levels:\n\n1.  **Level 1: Basic Practice**\n    This is the foundational level designed for students who need to build confidence and basic skills. It focuses on completing tasks accurately, understanding the core concepts, and practicing basic techniques without excessive pressure or complex requirements.\n\n2.  **Level 2: Intermediate Practice**\n    This level introduces more challenging tasks, requiring students to apply their knowledge to solve problems, analyze data, or perform specific procedures. It helps students move beyond simple repetition to develop critical thinking and the ability to handle slightly more complex scenarios.\n\n3.",
+    "similarity":0.1,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What does the term 3 homework levels refer to?",
+    "output":"The term **\"3 homework levels\"** is most commonly associated with **educational platforms** (such as Khan Academy, Coursera, or various online learning systems) and **game design** (specifically in the context of *The Sims* or *The Sims 4*).\n\nHere is a breakdown of how it is used in each context:\n\n### 1. Educational Platforms (Khan Academy, etc.)\nIn the context of online learning, \"3 homework levels\" refers to the **difficulty progression** of a course.\n*   **Concept**: These platforms typically offer a single course with multiple distinct tasks or modules.",
+    "similarity":0.12,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What is Structured output?",
+    "output":"**Structured output** is a method of presenting data in a format that is organized, clear, and easy to read, typically using a specific structure (like tables, lists, or diagrams) rather than just raw text or unstructured data.\n\nIn the context of data analysis and programming, it refers to the **structured output** of a data analysis function. This is the result of running a command (like `pandas`, `scikit-learn`, or `numpy`) that processes data and returns a result in a machine-readable format.\n\n### Key Characteristics\n1.  **Format**: It uses a specific structure (e.g",
+    "similarity":0.21,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Can you tell me what Structured output means?",
+    "output":"**Structured output** refers to the practice of organizing data, information, or text into a specific, logical format to make it easier to read, analyze, and process.\n\nInstead of presenting raw data in a chaotic list or unstructured text, structured output uses a defined schema (like tables, lists, or diagrams) to convey meaning clearly. This is essential in fields such as data science, business analysis, and technical documentation.\n\n### Key Characteristics\n*   **Defined Structure**: It follows a specific format (e.g., a table with columns for \"Date,\" \"Task,\" and \"Status\").\n*   **Clarity**:",
+    "similarity":0.21,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Explain Structured output in the context of this course.",
+    "output":"In the context of this course, **Structured Output** refers to the practice of organizing data, information, or results into a specific, logical format to ensure clarity, consistency, and ease of processing.\n\nUnlike unstructured data (which is raw text or unorganized information), structured data follows a predefined schema. In the context of a course like this, it is likely a foundational concept for understanding how to handle data in databases, programming, or data analysis workflows.\n\nHere is a breakdown of what Structured Output entails and why it is important:\n\n### 1. Definition\nStructured output is a standardized representation of data that allows for",
+    "similarity":0.22,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Give a brief definition of Structured output.",
+    "output":"**Structured output** refers to the presentation of data, information, or text in a format that is organized, consistent, and easy to read, typically using a specific structure (such as tables, lists, headings, or code blocks) rather than a single, unstructured block of text.\n\nCommon examples include:\n*   **Tables**: Organizing data into rows and columns for quick comparison.\n*   **Lists**: Presenting items in a clear, sequential order.\n*   **Code Blocks**: Using syntax highlighting to display code in a readable manner.\n*   **Markdown**: Using formatting like bolding, italics",
+    "similarity":0.2,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What does the term Structured output refer to?",
+    "output":"**Structured output** refers to data or information that is organized in a specific, predefined format rather than being presented as unstructured text, images, or raw data.\n\nIn the context of data science, machine learning, and data visualization, structured output typically means that the data has been transformed into a format that allows for easy processing, analysis, and interpretation by humans or automated systems. This format is generally based on a **schema** (a set of rules defining the structure of the data) and is often represented using **tables**, **lists**, **arrays**, or **JSON\/CSV** files.\n\n### Key Characteristics of Structured",
+    "similarity":0.18,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What is Learning rate?",
+    "output":"**Learning rate** (often abbreviated as **$\\lambda$** or **$\\alpha$**) is a hyperparameter in machine learning that determines the **step size** at which the model updates its weights during the training process.\n\nThink of it as the \"speed\" or \"step size\" of the optimizer (like Gradient Descent) when moving from one weight value to the next.\n\n### How It Works\nIn standard **Gradient Descent**, the learning rate controls how much the model adjusts its parameters based on the error (the gradient).\n*   **Small Learning Rate**: The model takes small steps. It might converge slowly",
+    "similarity":0.22,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Can you tell me what Learning rate means?",
+    "output":"**Learning rate** (often just called the **learning rate**) is a hyperparameter in machine learning that determines how much weight a model assigns to each input during the training process.\n\nThink of it as the \"step size\" or \"speed\" of the algorithm's learning process. Here is a breakdown of how it works:\n\n### 1. The Core Concept\nIn a standard linear regression model, the algorithm minimizes the error between the actual data points and the model's predictions. To do this, it needs to adjust the weights (the coefficients) of the model.\n\nThe learning rate controls **how large** these adjustments",
+    "similarity":0.2,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Explain Learning rate in the context of this course.",
+    "output":"In the context of machine learning, **Learning Rate** (often abbreviated as **$\\lambda$** or **$\\alpha$**) is a hyperparameter that controls the **step size** of the gradient descent algorithm. It determines how far the model's weights are moved in the direction of the negative gradient at each iteration.\n\nHere is a detailed breakdown of its role, mechanics, and impact:\n\n### 1. The Core Mechanism: Gradient Descent\nThe most common algorithm for learning is **Gradient Descent**, which minimizes the error (loss) function by moving the model parameters ($\\theta$) in the direction opposite",
+    "similarity":0.17,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Give a brief definition of Learning rate.",
+    "output":"The **learning rate** (denoted as $\\alpha$ or $\\gamma$) is a hyperparameter that determines the magnitude of the step taken during the gradient descent optimization process. It controls how aggressively the model updates its weights based on the gradient of the loss function.\n\nA common rule of thumb is that the learning rate should be a fraction of the maximum learning rate (often set to $10^{-4}$ or $10^{-5}$). If the learning rate is too large, the model may overshoot the minimum loss, leading to instability or divergence. If it is too small, the model may converge too slowly.",
+    "similarity":0.27,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What does the term Learning rate refer to?",
+    "output":"The term **learning rate** (often abbreviated as **$\\lambda$** or **$\\alpha$**) refers to a **hyperparameter** used in machine learning algorithms to control the **step size** during the **gradient descent** optimization process.\n\nHere is a breakdown of what it does and how it works:\n\n### 1. The Core Function: Gradient Descent\nIn supervised learning, the goal is to minimize the error between the model's predictions and the actual data. This is achieved using **gradient descent**, which iteratively moves in the direction opposite to the gradient of the loss function.\n\nThe mathematical update rule for a",
+    "similarity":0.18,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What is Guardrail?",
+    "output":"**Guardrail** is a term used primarily in **railway engineering** and **construction**, referring to the **side rails** of a railway track.\n\nHere is a breakdown of its key aspects:\n\n### 1. Definition\nThe guardrail is the vertical barrier that runs along the side of a railway track. Its primary function is to:\n*   **Prevent collisions:** To stop vehicles (trains, buses, trucks, or pedestrians) from hitting the track or the sleeper cars (the sleeping cars on the track).\n*   **Prevent derailment:** To stop trains from sliding off the track due to",
+    "similarity":0.22,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Can you tell me what Guardrail means?",
+    "output":"**Guardrail** is a term used primarily in **railroad engineering** and **railway safety**, but it also has a broader meaning in other fields like construction and law.\n\n### 1. In Railway Engineering\nIn the context of railways, a **guardrail** is a safety barrier placed along the side of a railway track to prevent vehicles, trains, or pedestrians from falling off the track.\n\n*   **Function**: It acts as a physical barrier to catch any object that might fall from the track, thereby preventing accidents.\n*   **Types**:\n    *   **Steel Guardrails**: The most common type",
+    "similarity":0.22,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Explain Guardrail in the context of this course.",
+    "output":"In the context of **Civil Engineering**, specifically within the **Geotechnical Engineering** and **Soil Mechanics** courses, a **Guardrail** is a critical structural element designed to protect the foundation and the soil beneath it from excessive settlement, liquefaction, or erosion.\n\nUnlike a simple wall or a retaining wall, a guardrail is a **continuous, flexible, and flexible-pile** structure that acts as a \"safety net\" for the soil. Its primary function is to absorb the movement of the soil and transfer that movement to the underlying foundation, preventing the soil from shifting or collapsing.\n\nHere is a detailed breakdown",
+    "similarity":0.14,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"Give a brief definition of Guardrail.",
+    "output":"A **guardrail** is a safety barrier or fence designed to protect people, vehicles, or structures from falling objects, falling debris, or other hazards. It is typically installed at the edge of a construction site, a roadway, or a building to prevent accidents and ensure the safety of those who might be on or near the edge.",
+    "similarity":0.39,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What does the term Guardrail refer to?",
+    "output":"The term **Guardrail** generally refers to a specific type of **railway safety system** designed to protect railway vehicles from falling objects or obstacles.\n\nHere is a breakdown of its primary functions and applications:\n\n### 1. Primary Function: Protection\nThe most common use of a guardrail is to act as a physical barrier between the railway track and the ground. Its main purpose is to:\n*   **Prevent Falling Objects:** Catch falling debris, rocks, or other objects that might fall from the track or surrounding area.\n*   **Prevent Collisions:** Stop vehicles from hitting objects on the track or the",
+    "similarity":0.18,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What are the 3 homework levels?",
+    "output":"There isn't a single, universally standardized \"3 homework levels\" system used in schools, universities, or workplaces. The structure of homework varies significantly depending on the subject, the institution, and the specific curriculum.\n\nHowever, most educational frameworks generally categorize homework into three distinct tiers based on **difficulty**, **time commitment**, and **purpose**:\n\n### 1. **Homework (Homework)**\n*   **Definition:** This is the most basic level of work. It is typically assigned to students who have already completed the required course material.\n*   **Characteristics:**\n    *   **Time:** Short (1",
+    "similarity":0.23,
+    "label":"mismatch"
+  },
+  {
+    "group":"heldout",
+    "question":"What are the three levels of homework in this course?",
+    "output":"Since I don't have access to the specific course materials you are referring to, I cannot provide the exact three levels of homework for your specific class.\n\nHowever, based on standard academic structures, here is how the three levels of homework are typically defined in most courses:\n\n1.  **Homework 1 (Introduction\/Setup)**\n    *   **Purpose:** This is usually the first assignment to introduce the course material, introduce the instructor, and establish the basic expectations for the semester.\n    *   **Content:** Often involves reading a short introduction, completing a quick quiz, or reviewing basic lecture notes.\n\n2.",
+    "similarity":0.14,
+    "label":"mismatch"
+  },
+  {
+    "group":"absent",
+    "question":"What is RAG?",
+    "output":"**RAG** stands for **Retrieval-Augmented Generation**. It is a powerful technology that combines **Retrieval** (searching for information) with **Generation** (creating text) to improve the quality of AI responses.\n\nHere is a breakdown of how it works and why it is important:\n\n### 1. The Core Mechanism\nThe process generally follows these steps:\n1.  **Retrieval**: The system searches a vast database (like a knowledge base, search engine, or document collection) to find relevant information.\n2.  **Augmentation**: The retrieved information is inserted into the",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is Embedding?",
+    "output":"**Embedding** is a fundamental concept in machine learning and artificial intelligence that transforms raw, high-dimensional data (such as images, text, or audio) into a compact, low-dimensional vector.\n\nThink of it as converting a complex, high-dimensional object into a smaller, more manageable representation that preserves its essential features. This process is crucial for tasks like **machine learning**, **natural language processing (NLP)**, and **computer vision**, where models need to understand relationships between data points.\n\nHere is a breakdown of how it works and why it matters:\n\n### 1. The Core Concept: Vector Space\nIn traditional data,",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is Vector database?",
+    "output":"A **Vector database** is a type of database designed to store, search, and retrieve data based on **vector embeddings** (mathematical representations of data).\n\nInstead of storing raw text or images as flat files, these databases convert data into high-dimensional numerical vectors (usually 768-dimensional for images or 1024-dimensional for text) that capture the semantic meaning of the data. This allows the database to find similar items or documents based on their abstract structure rather than their exact content.\n\n### Key Characteristics\n\n1.  **Semantic Search**: Unlike keyword-based search (e.g., Google Search), vector search",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is DSPy?",
+    "output":"**DSPy** stands for **Deep Signal Processing**. It is a framework designed to build and deploy deep learning models for signal processing tasks, such as audio, video, and time-series data.\n\nUnlike traditional deep learning frameworks (like PyTorch or TensorFlow), DSPy is built specifically for **signal processing**, meaning it is optimized for handling continuous data (like audio or video) rather than discrete data (like images or text).\n\nHere are the key characteristics and capabilities of DSPy:\n\n### 1. Core Capabilities\nDSPy is designed to solve complex signal processing problems, including:\n*   **Audio Processing**:",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is LangGraph?",
+    "output":"**LangGraph** is a powerful **graph-based AI framework** designed to build large-scale, multi-step workflows for large language models (LLMs). It was developed by the **LangChain team** at Google and is widely used for complex tasks like multi-turn conversations, tool usage, and long-form reasoning.\n\n### Core Concept\nUnlike traditional LLMs that process text line-by-line, LangGraph treats the conversation as a **graph of states**. It allows you to define a sequence of states (e.g., \"User asks\", \"Model responds\", \"User corrects\", \"Model corrects\") and execute them in a controlled",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is Agentic RAG?",
+    "output":"**Agentic RAG** (Agent-Driven Retrieval Augmented Generation) is a next-generation Retrieval-Augmented Generation (RAG) architecture that leverages **agentic workflows** to enhance the quality, relevance, and efficiency of information retrieval.\n\nUnlike traditional RAG systems that simply search the web or database for snippets, **agentic RAG** uses a multi-agent system to orchestrate the retrieval process. It breaks down the complex task of answering a user's query into smaller, specialized sub-agents that work together to find the most relevant information.\n\nHere is a breakdown of how it works and why it is becoming",
+    "similarity":null,
+    "label":"asserted?"
+  },
+  {
+    "group":"absent",
+    "question":"What is ReAct?",
+    "output":"**ReAct** (often written as **ReAct**) is a framework for generating human-like reasoning and dialogue. It was introduced by **Liang et al.** in 2020 as a way to combine the strengths of **Reasoning** (using logic and deduction) and **Acting** (taking actions or making decisions) to solve complex problems.\n\nThe core idea is to treat the generation of a response as a sequence of two main steps:\n1.  **Reasoning**: Analyze the input, identify the goal, and apply logical steps to reach a conclusion.\n2.  **Acting**:",
+    "similarity":null,
+    "label":"asserted?"
+  }
+]
