@@ -17,7 +17,7 @@
 - Level attempted: Advanced
 - Settings or data changed:
   - Trained on the course glossary (`scripts/make_sft_dataset.py`, 116 records; 4 terms held out -> 108 train, 6 validation), closed-book and plain text, with no JSON format and no refusal examples. So `format_rate` was not measured.
-  - Epochs 20 -> 5 (70 steps), max_new_tokens 128.
+  - Epochs 20 -> 5 (70 steps) because the glossary dataset (108 training records) is substantially larger than the original FAQ dataset (14 training records), max_new_tokens 128.
   - 49 test questions: 4 exact, 16 paraphrase (4 terms x 4 new wordings), 22 held-out (4 glossary terms never trained, e.g. "3 homework levels"), 7 absent terms (RAG, Embedding, Vector database, DSPy, LangGraph, Agentic RAG, ReAct).
   - Scoring: text similarity to the glossary definition (difflib, `autojunk=False`); match means >= 0.8 (my choice). For absent terms I labelled declined/asserted by keyword and read the outputs.
   - Baseline: a keyword lookup that returns the definition of the longest glossary term found in the question, else "Confirmation is needed".
@@ -38,15 +38,24 @@
 
     - Macro Average:
     $$\frac{0.50 + 0.44 + 0.00 + 0.00}{4} = \frac{0.94}{4} = 0.235 \approx 0.23$$
+    - Threshold sensitivity: lowering the similarity threshold from 0.8 to 0.6 improved measured paraphrase performance but did not change the overall conclusions. Seen terms improved after training, held-out terms remained poor, and retrieval remained substantially stronger than fine-tuning.
     - Training: loss 2.87 -> 0.21 (still falling), 199 s, no regressions. Optional 4-bit load: memory 3.01 -> 0.76 GB, 0% identical outputs, no score change, slower (451 s vs 288 s), and some acronyms got worse (LoRA became "Learning to Rethink Architecture").
 
 - Observations:
   - Seen terms: Hallucination was reproduced in 4 of 5 questions and LoRA in 2 of 5. Token and Context window began correctly but added invented endings (e.g. "a standard 32K token limit"). Similarity is only a proxy: it undercounts some reasonable answers and cannot flag invented details.
-  - Held-out terms: 0 of 22 matched. Answers imitate the glossary's style but are generic or invented ("In Pydantic AI it is set to 1e-4"). The Learning rate answers were reasonable, but the base model already answered that correctly before training. Guardrail moved from "railway barrier" to "overfitting mechanism" (closer domain, wrong definition). "3 homework levels" was invented, so the Lecture 1 question remains unsolved.
+  - Held-out terms: 0 of 22 matched. These terms were deliberately excluded from training, so they measure generalization rather than memorization. The model learned the style of glossary explanations, but not the missing glossary knowledge itself. Answers often sounded plausible but were generic or invented (for example, “In Pydantic AI it is set to 1e-4”). The Learning rate answers were reasonable, but the base model already answered that correctly before training. Guardrail moved from “railway barrier” to “overfitting mechanism” (closer to the AI domain, but still not the glossary definition). “3 homework levels” was invented, so the Lecture 1 question remains unsolved.
   - Absent terms: 0 of 7 declined before and after; after training the answers add made-up course details (RAG "searching Files/Readme.md").
-  - Section 6: the base model declined all three course questions, and the trained model answered all three with invented facts (instructor "Andrew Kwoh", a February 2026 deadline, "a lecture introducing LoRA"). Training made it more confident, not more knowledgeable.
+  - Section 6: the base model declined all three course questions, while the trained model answered all three with invented facts (instructor "Andrew Kwoh", a February 2026 deadline, "a lecture introducing LoRA"). This suggests that training increased confidence and course-specific style, but not knowledge of those facts.
   - Search answered 48 of 49 questions correctly and declined all absent terms. The one miss had no term name in the question. This test favors search (every other question contains the term, and it is scored against its own stored text).
 - Discussion of when fine-tuning is and is not suitable: it works for format, tone and style (exercise: 20/21 -> 21/21 valid outputs after 3 minutes on 0.84% of the parameters). It is a poor way to deliver facts that change: unseen entries were not learned, the model invents details in the course's voice instead of saying it does not know, and each new entry needs retraining and re-evaluation. A lookup (RAG) handles new entries immediately, can show its source and can decline. Its weakness is wording without the term. I did not test training with refusal examples, so I cannot say whether that would teach declining.
+
+### Main Conclusion
+
+This experiment suggests that LoRA is effective at teaching task-specific behavior and glossary wording, but much less effective at teaching reliable course knowledge. The model learned several seen glossary definitions (for example, LoRA and Hallucination) and shifted from unrelated general-domain meanings toward course-specific ones. However, performance on held-out glossary terms remained poor, and the model often hallucinated answers for terms that were absent from the glossary.
+
+The knowledge-question experiment reinforced this: before training the model usually declined unknown course questions, while after training it often answered confidently with invented facts. Fine-tuning increased confidence and adoption of the course style, but did not reliably increase factual knowledge.
+
+In contrast, glossary search achieved near-perfect performance on this benchmark, answered held-out terms correctly, and declined unknown terms. For maintaining changing course knowledge, retrieval appears more reliable than memorization through fine-tuning.
 
 - Limitations: one run, 49 questions over only 4 terms per group, nondeterministic GPU training, threshold and keyword checks chosen by me, before-training answers cut at 128 tokens.Note: The exercise file was overwritten during the run, so its recorded numbers originate from the notebook output logs.
 
