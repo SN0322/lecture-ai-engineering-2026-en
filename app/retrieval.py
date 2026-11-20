@@ -152,7 +152,7 @@ def search_graph(query: str) -> dict:
     adjacent = defaultdict(set)
     for edge in graph["edges"]:
         a, b = edge["source"], edge["target"]
-        if edge["relation"] in ("next_page", "mentions") and a in nodes and b in nodes:
+        if edge["relation"] == "next_page" and a in nodes and b in nodes:
             adjacent[a].add(b)
             adjacent[b].add(a)
 
