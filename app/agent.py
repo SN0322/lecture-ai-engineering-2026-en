@@ -79,6 +79,9 @@ FULL_CONTEXT_PROMPT = "<materials>\n{materials}\n</materials>\n\nQuestion: {ques
 
 # Pass the model at runtime (so tests can substitute TestModel without calling an API)
 agent = Agent(instructions=INSTRUCTIONS)
+agent.tool_plain(tools.search_glossary)
+agent.tool_plain(tools.get_lecture_summary)
+agent.tool_plain(tools.make_quiz)
 agent.tool_plain(tools.search_materials)
 
 # TODO(Lecture 03 exercise): create make_quiz in tools.py and register it here
