@@ -1,0 +1,276 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 5,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 128,
+    "gen": {
+      "do_sample": false
+    }
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "torch": "2.11.0+cu130"
+  },
+  "method": "LoRA (no quantization), closed-book plain-text glossary answers",
+  "data": {
+    "train_records": 108,
+    "valid_records": 6,
+    "test_questions": 49,
+    "test_terms": [
+      "LoRA",
+      "Hallucination",
+      "Token",
+      "Context window"
+    ],
+    "heldout_terms": [
+      "3 homework levels",
+      "Structured output",
+      "Learning rate",
+      "Guardrail"
+    ],
+    "absent_terms": [
+      "RAG",
+      "Embedding",
+      "Vector database",
+      "DSPy",
+      "LangGraph",
+      "Agentic RAG",
+      "ReAct"
+    ],
+    "extra_heldout_questions": {
+      "3 homework levels": [
+        "What are the 3 homework levels?",
+        "What are the three levels of homework in this course?"
+      ]
+    },
+    "test_templates": [
+      "Can you tell me what {} means?",
+      "Explain {} in the context of this course.",
+      "Give a brief definition of {}.",
+      "What does the term {} refer to?"
+    ],
+    "similarity_threshold": 0.8,
+    "similarity_autojunk": false
+  },
+  "training": {
+    "trainable_params": 6389760,
+    "all_params": 758782784,
+    "steps": 70,
+    "final_train_loss": 0.2119138240814209,
+    "train_seconds": 198.7862
+  },
+  "before": {
+    "exact": {
+      "n": 4,
+      "mean_similarity": 0.24,
+      "match_rate": 0.0
+    },
+    "heldout": {
+      "n": 22,
+      "mean_similarity": 0.19,
+      "match_rate": 0.0
+    },
+    "paraphrase": {
+      "n": 16,
+      "mean_similarity": 0.23,
+      "match_rate": 0.0
+    },
+    "absent_labels": {
+      "asserted?": 7
+    },
+    "absent_refusal": {
+      "refused": 0,
+      "of": 7,
+      "rate": 0.0
+    }
+  },
+  "after": {
+    "exact": {
+      "n": 4,
+      "mean_similarity": 0.64,
+      "match_rate": 0.5
+    },
+    "heldout": {
+      "n": 22,
+      "mean_similarity": 0.31,
+      "match_rate": 0.0
+    },
+    "paraphrase": {
+      "n": 16,
+      "mean_similarity": 0.62,
+      "match_rate": 0.25
+    },
+    "absent_labels": {
+      "asserted?": 7
+    },
+    "absent_refusal": {
+      "refused": 0,
+      "of": 7,
+      "rate": 0.0
+    }
+  },
+  "headline": {
+    "before": {
+      "micro": 0.0,
+      "macro": 0.0
+    },
+    "after": {
+      "micro": 0.12,
+      "macro": 0.19
+    }
+  },
+  "threshold_sensitivity": {
+    "0.6": {
+      "exact": 0.5,
+      "heldout": 0.0,
+      "paraphrase": 0.44
+    },
+    "0.7": {
+      "exact": 0.5,
+      "heldout": 0.0,
+      "paraphrase": 0.25
+    },
+    "0.8": {
+      "exact": 0.5,
+      "heldout": 0.0,
+      "paraphrase": 0.25
+    }
+  },
+  "regressed": [],
+  "knowledge": [
+    {
+      "Question": "When is the final assignment deadline for this course?",
+      "Type": "not in glossary",
+      "Before": "declined",
+      "Before output": "I don't have access to the specific details of your course, so I can't tell you the exact deadline. Could you please provide:\n\n1. **Your course name** (e.g., \"CS 101: Introduction to Programming\")\n2. **Your instructor's name**\n3. **The course syllabus** (if available) or any other relevant materials\n\nThis will help me give you the accurate deadline!",
+      "After": "asserted",
+      "After output": "All assignments are due by 11:59 PM EST on the day following the course's final due date (February 15, 2026, by 11:59 PM EST on February 16, 2026). Late work will not be graded."
+    },
+    {
+      "Question": "What is the instructor's name?",
+      "Type": "not in glossary",
+      "Before": "declined",
+      "Before output": "I don't have access to specific information about an instructor named \"X\" unless you provide more context. Could you share more details about the course, class, or context where you're asking?",
+      "After": "asserted",
+      "After output": "The person teaching this course. In this course, it is Andrew Kwoh."
+    },
+    {
+      "Question": "What is the topic of the next lecture?",
+      "Type": "not in glossary",
+      "Before": "declined",
+      "Before output": "I don't have access to the specific content of your upcoming lectures or a list of topics you've covered. To help you effectively, please provide the following details:\n\n1.  **Your course name or instructor name.**\n2.  **The specific lecture title or topic you are currently studying.**\n3.  **Any previous topics or materials you have reviewed.**\n4.  **The syllabus or course description** if available.\n\nOnce you share this information, I can help you identify the most relevant lecture, suggest a suitable topic for the next one, or provide a study plan based on your current knowledge.",
+      "After": "asserted",
+      "After output": "A lecture introducing LoRA. It covers preparation, training with LoRA, and evaluation. This is the first lecture in the course's lecture series."
+    },
+    {
+      "Question": "What is Hallucination?",
+      "Type": "glossary, seen in training",
+      "Before": "differs (0.25)",
+      "Before output": "**Hallucination** is a mental disorder characterized by the **false perception of one's own or others' reality**. It occurs when a person believes they are experiencing sensations, events, or thoughts that do not exist in reality.\n\nHere is a breakdown of the key aspects:\n\n*   **Definition**: It is the belief that one is experiencing things that are not there. Common examples include seeing a shadow, hearing voices, or feeling pain when there is none.\n*   **Distinction from Illusion**: While both hallucinations and illusions are false perceptions, they differ in context:\n    *   **Illusion**: A",
+      "After": "match (0.82)",
+      "After output": "The phenomenon of an LLM generating plausible content that is factually incorrect or nonexistent. It is more likely when asked about things the model does not know, such as recent information or organization- or course-specific details. Mitigations include asking for evidence, checking facts against tools or documents, and trusting human confirmation when appropriate."
+    },
+    {
+      "Question": "What are the 3 homework levels?",
+      "Type": "glossary, held out",
+      "Before": "differs (0.23)",
+      "Before output": "There isn't a single, universally standardized \"3 homework levels\" system used in schools, universities, or workplaces. The structure of homework varies significantly depending on the subject, the institution, and the specific curriculum.\n\nHowever, most educational frameworks generally categorize homework into three distinct tiers based on **difficulty**, **time commitment**, and **purpose**:\n\n### 1. **Homework (Homework)**\n*   **Definition:** This is the most basic level of work. It is typically assigned to students who have already completed the required course material.\n*   **Characteristics:**\n    *   **Time:** Short (1",
+      "After": "differs (0.29)",
+      "After output": "A progression from reading and understanding the material to analyzing it and applying it. The levels are:\n\n- Beginner: Read and understand the material.\n- Intermediate: Analyze the material and explain its purpose and features.\n- Advanced: Apply the material to a problem or project."
+    }
+  ],
+  "executed_training_myself": true,
+  "search": {
+    "exact": {
+      "n": 4,
+      "mean_similarity": 1.0,
+      "match_rate": 1.0
+    },
+    "heldout": {
+      "n": 22,
+      "mean_similarity": 0.96,
+      "match_rate": 0.95
+    },
+    "paraphrase": {
+      "n": 16,
+      "mean_similarity": 1.0,
+      "match_rate": 1.0
+    },
+    "absent_labels": {
+      "possible refusal": 7
+    },
+    "absent_refusal": {
+      "refused": 7,
+      "of": 7,
+      "rate": 1.0
+    }
+  },
+  "search_headline": {
+    "micro": 0.98,
+    "macro": 0.99
+  },
+  "quantization": {
+    "fp32_gb": 3.01,
+    "4bit_gb": 0.76,
+    "identical_outputs": 0.0,
+    "fp32": {
+      "exact": {
+        "n": 4,
+        "mean_similarity": 0.24,
+        "match_rate": 0.0
+      },
+      "heldout": {
+        "n": 22,
+        "mean_similarity": 0.19,
+        "match_rate": 0.0
+      },
+      "paraphrase": {
+        "n": 16,
+        "mean_similarity": 0.23,
+        "match_rate": 0.0
+      },
+      "absent_labels": {
+        "asserted?": 7
+      },
+      "absent_refusal": {
+        "refused": 0,
+        "of": 7,
+        "rate": 0.0
+      }
+    },
+    "4bit": {
+      "exact": {
+        "n": 4,
+        "mean_similarity": 0.19,
+        "match_rate": 0.0
+      },
+      "heldout": {
+        "n": 22,
+        "mean_similarity": 0.18,
+        "match_rate": 0.0
+      },
+      "paraphrase": {
+        "n": 16,
+        "mean_similarity": 0.23,
+        "match_rate": 0.0
+      },
+      "absent_labels": {
+        "asserted?": 7
+      },
+      "absent_refusal": {
+        "refused": 0,
+        "of": 7,
+        "rate": 0.0
+      }
+    }
+  }
+}
